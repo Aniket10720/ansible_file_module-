@@ -1,0 +1,19 @@
+---
+- hosts: dev
+<<<<<<< HEAD
+  tasks:
+    - name: print facts
+      debug:
+        msg: "IPv4 address: {{ ansible_default_ipv4.address }}"
+
+=======
+  become: yes
+  tasks: 
+    - name: create symbolic link 
+      ansible.builtin.file:
+        src: /home/aniket/example.txt
+        dest: /var/www/html/example.txt 
+        owner: root
+        group: root
+        state: link
+>>>>>>> c27679b (commit)

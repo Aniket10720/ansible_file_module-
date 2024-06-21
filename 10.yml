@@ -1,0 +1,22 @@
+---
+- hosts: dev
+  become: yes
+  tasks:
+<<<<<<< HEAD
+    - name: Update apt cache and make sure Vim, Curl and Unzip are installed
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - vim
+        - curl
+        - unzip
+
+=======
+    - name: Set access time based on seconds from epoch value
+      ansible.builtin.file:
+        path: /etc/x
+        state: touch
+        access_time: '{{ "%Y%m%d%H%M.%S" | strftime }}'
+>>>>>>> c27679b (commit)
+

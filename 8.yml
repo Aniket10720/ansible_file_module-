@@ -1,0 +1,24 @@
+---
+- hosts: dev
+  become: yes
+  tasks:
+<<<<<<< HEAD
+    - name: creates sammy's file
+      become_user: sammy
+      file:
+        path: /tmp/ansible_sammy
+        state: touch
+
+    - name: creates erika's file
+      become_user: erika
+      file:
+        path: /tmp/ansible_erika
+        state: touch
+
+=======
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /work/new_dir
+        state: directory
+        mode: '0755'
+>>>>>>> c27679b (commit)

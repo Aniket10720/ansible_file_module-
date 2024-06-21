@@ -1,0 +1,28 @@
+---
+- hosts: dev
+<<<<<<< HEAD
+  vars:
+    - create_user_file: yes
+    - user: aniket  
+  tasks:
+    - name: create file for user
+      file:
+        path: /home/{{ user }}/myfile
+        state: touch
+      when: create_user_file
+
+
+
+=======
+  become: yes
+  tasks:
+    - name: create two hard link
+      ansible.builtin.file:
+        src: '/work/{{ item.src }}'
+        dest: '{{ item.dest }}'
+        state: hard
+      loop: 
+        - {src: x, dest: y}
+        - {src: z, dest: k}
+  
+>>>>>>> c27679b (commit)

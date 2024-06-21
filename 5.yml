@@ -1,0 +1,33 @@
+---
+- hosts: dev
+<<<<<<< HEAD
+  vars:
+    - user: aniket
+  tasks:
+    - name: Check if file already exists
+      command: ls /home/{{ user }}/myfile
+      register: file_exists
+      ignore_errors: yes
+
+    - name: create file for user
+      file:
+        path: /home/{{ user }}/myfile
+        state: touch
+      when: file_exists is failed
+
+    - name: show message if file exists
+      debug:
+        msg: The user file already exists.
+      when: file_exists is succeeded
+
+
+
+=======
+  become: yes
+  tasks:
+    - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+      ansible.builtin.file: 
+        path: /work/aniket.conf
+        state: touch
+        mode: u=rw,g=r,o=r
+>>>>>>> c27679b (commit)

@@ -1,0 +1,25 @@
+---
+<<<<<<< HEAD
+- hosts: all
+  tasks:
+    - name: creates users files
+      file:
+        path: /tmp/ansible-{{ item }}
+        state: touch
+      loop:
+        - sammy
+        - erika
+        - brian
+
+
+
+=======
+- hosts: dev
+  become: yes
+  tasks:
+    - name: Touch the same file, but add/remove some permissions
+      ansible.builtin.file:
+        path: /work/aniket.conf
+        state: touch
+        mode: u+rw,g=wx,o-rwx
+>>>>>>> c27679b (commit)

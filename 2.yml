@@ -1,0 +1,19 @@
+---
+- hosts: dev
+<<<<<<< HEAD
+  vars:
+    - username: aniket
+    - home: /home/aniket   
+      debug:
+        msg: "Username: {{ aniket }}, Home dir: {{ home }}"
+=======
+  become: yes
+  tasks:
+    - name:
+      ansible.builtin.file:
+        path: /work
+        owner: root
+        group: root
+        mode: '1777'
+>>>>>>> c27679b (commit)
+

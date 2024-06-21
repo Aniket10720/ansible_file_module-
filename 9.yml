@@ -1,0 +1,20 @@
+---
+- hosts: dev
+  become: yes
+  tasks:
+<<<<<<< HEAD
+    - name: Update apt cache and make sure Vim is installed
+      apt:
+        name: vim
+        update_cache: yes
+
+
+
+=======
+    - name: Update modification and access time of given file
+      ansible.builtin.file:
+        path: /work/x
+        state: file
+        modification_time: now
+        access_time: now
+>>>>>>> c27679b (commit)
